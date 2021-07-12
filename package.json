@@ -1,0 +1,23 @@
+{
+  "name": "twitter-trends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "child_process": "^1.0.2",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "python-shell": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "ysfzkn",
+  "license": "ISC"
+}
