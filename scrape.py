@@ -55,15 +55,12 @@ def get_tweets():
 
     tweets = []
     for i in range(0,20):
-        tweets.append(
-            
-                tweet_data[0]['trends'][i]["name"]
-            )
+        tweets.append(tweet_data[0]['trends'][i]["name"])
 
     #data = json.dumps(tweets)
     data = tweets
 
-    print(json.dumps(data))
+    print(data)
     # print(json.dumps(data))
     with open(f'public/data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)

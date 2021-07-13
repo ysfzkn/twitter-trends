@@ -11,26 +11,20 @@ const {PythonShell} = require('python-shell');
 const exec = util.promisify(child.exec);
 app.use("/public",express.static(path.join(__dirname,'public')))
 
+async function run()
+{
+  await exec(`python ${path.join(__dirname,'/scrape.py')}`);
+}
 
 app.get('/', async (req, res) => 
 {
-    res.sendFile(path.join(__dirname+'/index.html'));
+  res.sendFile(path.join(__dirname+'/index.html'));
 })
-
 
 app.get('/scrape' ,async (req, res) =>
 {
-    const { stdout, stderr } = await exec(`python ${path.join(__dirname,'/scrape.py')}`)
-
-    if(stderr) 
-    {
-        return res.send({error:stderr.toString()})
-    }
-    
-    // const awat = await JSON.parse(stdout); 
-    console.log(JSON.parse(stdout))
-    res.send({stdout: JSON.parse(stdout)})   // handling by script.js
-})
+    run();
+});
 
 app.listen(port, () =>
 {
