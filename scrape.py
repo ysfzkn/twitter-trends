@@ -1,4 +1,9 @@
 
+"""
+
+    
+
+"""
 import numpy as np
 import tweepy
 import requests
@@ -24,7 +29,6 @@ def get_tweets():
 
     b64_encoded_key = b64_encoded_key.decode('ascii')
 
-
     base_url = 'https://api.twitter.com/'
     auth_url = '{}oauth2/token'.format(base_url)
     auth_headers = {
@@ -35,7 +39,7 @@ def get_tweets():
         'grant_type': 'client_credentials'
     }
     auth_resp = requests.post(auth_url, headers=auth_headers, data=auth_data)
-    #print(auth_resp.status_code)
+
     access_token = auth_resp.json()['access_token']
 
     trend_headers = {
@@ -51,17 +55,14 @@ def get_tweets():
     trend_resp = requests.get(trend_url, headers=trend_headers, params=trend_params)
 
     tweet_data = trend_resp.json()
-    # print(tweet_data)
 
     tweets = []
     for i in range(0,20):
         tweets.append(tweet_data[0]['trends'][i]["name"])
 
-    #data = json.dumps(tweets)
     data = tweets
 
     print(data)
-    # print(json.dumps(data))
     with open(f'public/data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
