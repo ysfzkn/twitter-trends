@@ -1,0 +1,31 @@
+version: '3'
+ 
+services:
+  twitter_trends_web:
+    container_name: twitter-trends
+    image: twitter_trends_web_image
+    restart: always
+    build:
+      context:  ./
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+      # HTTPS 
+      - "traefik.http.routers.twitter_trends_https.rule=Host(`twitter-trends.rgmbeta.com`)"
+      - "traefik.http.routers.twitter_trends_https.entrypoints=websecure"
+      - "traefik.http.routers.twitter_trends_https.tls.certresolver=myhttpchallenge"
+
+      #  HTTP
+      - "traefik.http.routers.twitter_trends_http.rule=Host(`twitter-trends.rgmbeta.com`)"
+      - "traefik.http.routers.twitter_trends_http.entrypoints=web"
+      - "traefik.http.routers.twitter_trends_http.middlewares=redirect-to-https"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: proxy
