@@ -119,7 +119,7 @@ function run()
             }
         }
     
-        // hangi indekstekinin bilgileri alınıcak
+        // getting index info
         var itemfirsttt = $($('.trendsbox')[0]);
         var justonebox = itemfirsttt.attr('data-colors');
         var justoneboxtitle = itemfirsttt.attr('data-titles');
@@ -201,9 +201,7 @@ function run()
           var item2 = $($('.trendsbox')[j-1]);
           var justonebox2 = item2.attr('data-colors');
           var justoneboxtitle2= item2.attr('data-titles');
-              
-              
-              // no we have a color list retry
+             
           var backgroundColors2 = justonebox2.split(",");
           var typeString2 = justoneboxtitle2.split(",");
       
