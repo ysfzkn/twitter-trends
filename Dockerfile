@@ -10,6 +10,7 @@ COPY . .
 RUN pip install requests
 RUN pip install tweepy
 RUN pip install numpy
+RUN pip install schedule
 
 EXPOSE 3000
 CMD npm start
