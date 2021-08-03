@@ -1,6 +1,6 @@
 # twitter-trends
 
-# Project for see Twitter Trends and Google Hot Trends in Turkey (you can change country code in scrape.py)
+# Project to see Twitter Trends and Google Hot Trends in Turkey (you can change country code in scrape.py)
 
 # iframe is used for Google.
 
