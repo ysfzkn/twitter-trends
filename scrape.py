@@ -5,15 +5,9 @@
 
 """
 import numpy as np
-import tweepy
 import requests
 import base64
 import json
-import schedule
-import time
-import datetime
-import os
-import csv
 
 
 sayi = 0
