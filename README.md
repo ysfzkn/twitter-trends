@@ -1,7 +1,8 @@
 # twitter-trends
 
-# Project for see Twitter Trends and Google Hot Trends in Turkey (you can change country code in scrape.py)
+## This project shows current google and twitter trends in Turkey at the same page.
 
-# iframe is used for Google.
+* You can change country code in scrape.py
+* iframe is used for Google.
 
-## A online website of project : https://twitter-trends.rgmbeta.com/
+* A online website of project : https://twitter-trends.rgmbeta.com/
