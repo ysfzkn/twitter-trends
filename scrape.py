@@ -1,7 +1,9 @@
 
 """
 
-    
+        Author: Yusuf Ozkan
+        Twitter API 
+        Scrapes Trends in Turkey
 
 """
 import numpy as np
@@ -14,8 +16,8 @@ sayi = 0
 
 def get_tweets():
         
-    consumer_key = 'LqYfTFQm4xNYdTapk8nbLU8S2'
-    consumer_secret = 'UstRhrp7wvnYATcXEEQODFV8g0rKvixCNZ4ifilnVNH5OOBhkR'
+    consumer_key = 'YOUR CONSUMER KEY'
+    consumer_secret = 'YOUR CONSUMER SECRET KEY'
 
     key_secret = '{}:{}'.format(consumer_key, consumer_secret).encode('ascii')
 
